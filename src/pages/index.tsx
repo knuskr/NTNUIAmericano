@@ -84,7 +84,7 @@ function generateRounds(data: any[]): any[][][] {
     return rounds;
 }
 
-type Matchup = string[][][];
+type Matchup = string[][][]; 
 
 function formatMatchups(matchups: Matchup): string[][][] {
     let rounds: string[][][] = [];
