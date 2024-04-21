@@ -160,7 +160,7 @@ const Home: React.FC<HomeProps> = ({ data, error }) => {
                 <p className="font-bold">Spillere: &nbsp;</p>
                 {data.map((item) => (
                     <div key={`${item.fornavn}-${item.etternavn}`}>
-                        {item.fornavn} {item.etternavn[0]}.
+                        {item.fornavn} {item.etternavn[0]}. &nbsp;
                     </div>
                 ))}
             </div>
@@ -189,7 +189,11 @@ const Home: React.FC<HomeProps> = ({ data, error }) => {
                                     <div key={matchIndex}>{match[0]}</div>
                                 ))}
                             </div>
+                            <div className="font-bold text-xl">
+                                {scores[0]}{/* Score 1 */}
+                            </div>
                             {round.length > 1 && <div>vs</div>}
+                            <div className="font-bold text-xl">{scores[1]}</div> {/* Score 2 i fet tekst */}
                             <div className="flex flex-col">
                                 {round.slice(1).map((match, matchIndex) => (
                                     <div key={matchIndex}>{match[1]}</div>
@@ -211,10 +215,7 @@ const Home: React.FC<HomeProps> = ({ data, error }) => {
             ))}
             </div>
 
-            <div className="mt-4">
-            <p>Score 1: {scores[0]}</p> {/* Display the scores here */}
-            <p>Score 2: {scores[1]}</p>
-            </div>
+            
         </Container>
     );
 };
